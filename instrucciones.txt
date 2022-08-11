@@ -1,0 +1,4 @@
+123 Binario $
+1110 Hexadecimal $
+y12 Binario $
+233 Binario $
