@@ -1,8 +1,14 @@
 123 Binario $
 1110 Hexadecimal $
 y12 Binario $
+34 Romano $
+12 Alternativo $
+3 Aleatorio $
 233 Binario $
 12 Octal 
 123
 Binario
+
 $
+23 Octal $
+2 Binario
