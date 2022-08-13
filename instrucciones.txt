@@ -2,3 +2,7 @@
 1110 Hexadecimal $
 y12 Binario $
 233 Binario $
+12 Octal 
+123
+Binario
+$

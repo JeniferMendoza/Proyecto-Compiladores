@@ -27,7 +27,12 @@ def MostrarResultados():
     HacerConversiones()
     print('\n')
     print(f'TOKENS Encotrados: {NToken}')
-    print(LinesToken)
+    for i in LinesToken:
+        a=0
+        while(a<len(i)):
+            print(i[a])
+            a+=1
+    
 
 def HacerConversiones():
     l=0
@@ -38,7 +43,7 @@ def HacerConversiones():
         l+=1
         if(l in ErrorLines):
             #Salidas.append(f'{l}: Error')
-            print(f'{l}: Error. Errore de Sintaxis en la linea {3}')
+            print(f'{l}: Error. Errore de Sintaxis en la linea {l}')
         else:
             if re.search(t_digitos,text) is not None:
                 text2 = re.search(t_digitos,text)
@@ -91,29 +96,29 @@ while(i<len(tlines)):
         if re.search(t_digitos,j) is not None:
             text2 = re.search(t_digitos,j)
             decimal = int(text2[0])
-            Token.append(f'valor: {decimal}, Tipo: Numero Decimal, Linea: {i}')
+            Token.append(f'Linea: {i} | valor: {decimal}, Tipo: Numero Decimal')
             NToken+=1
         if re.search(t_hexadecimal,j) is not None:
             #Salida=conversor.decimal_a_hexadecimal(decimal)
-            Token.append(f'valor: Hexadecimal, Tipo: Base Numerica, Linea: {i}') 
+            Token.append(f'Linea: {i} | valor: Hexadecimal, Tipo: Base Numerica') 
             NToken+=1 
         if re.search(t_octal,j) is not None:
-            Token.append(f'valor: Octal, Tipo: Base Numerica, Linea: {i}')  
+            Token.append(f'Linea: {i} | valor: Octal, Tipo: Base Numerica')  
             NToken+=1
         if re.search(t_binario,j) is not None:
-            Token.append(f'valor: Binario, Tipo: Base Numerica, Linea: {i}') 
+            Token.append(f'Linea: {i} | valor: Binario, Tipo: Base Numerica') 
             NToken+=1 
         if re.search(t_romano,j) is not None:
-            Token.append(f'valor: Romano, Tipo: Base Numerica, Linea: {i}')
+            Token.append(f'Linea: {i} | valor: Romano, Tipo: Base Numerica')
             NToken+=1
         if re.search(t_alternativo,j) is not None:
-            Token.append(f'valor: MAYA (Base Alternativa), Tipo: Base Numerica, Linea: {i}')
+            Token.append(f'Linea: {i} | valor: MAYA (Base Alternativa), Tipo: Base Numerica')
             NToken+=1
         if re.search(t_aleatorio,j) is not None:
-            Token.append(f'valor: Aleatorio, Tipo: Base Numerica Aleatoria, Linea: {i}')
+            Token.append(f'Linea: {i} | valor: Aleatorio, Tipo: Base Numerica Aleatoria')
             NToken+=1
         if re.search(t_dolarSign,j) is not None:
-            Token.append(f'valor: $, Tipo: Delimitador, Linea {i}')
+            Token.append(f'Linea: {i} | valor: $, Tipo: Delimitador')
             NToken+=1
     LinesToken.append(Token)
     Token=[]
